@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+      Crawford's Anger Lab
+    </title>
+    <style>
+      img {
+        display: none;
+        border-style:dashed;
+        border-color:orange;
+        border-width:9px;
+        border-radius:90px
+      }
+      button {
+        background-color: rgb(0, 238, 255);
+        font-size:20px;
+        color:white;
+        border-style:ridge;
+        border-width:3px;
+        border-color:rgb(255, 115, 0);
+        position:absolute;
+      }
+      .BUTTON1 {
+        margin-right: auto;
+        margin-left: auto;
+        height: 300px;
+      width: 300px;
+      text-align: center;
+      }
+      .confetti {
+        display:block;
+        margin-right: auto;
+        margin-left: auto;
+      }
+      p {
+        color:rgb(255, 111, 0);
+        text-align: center;
+      }
+    </style> 
+  </head> 
+<body>
+  <h1> Can you click the small button 10 times in 20 seconds?</h1>
+  <div id="time"> 
+    <span class="digit" id="hr"> 
+        00</span> 
+    <span class="txt">Hr</span> 
+    <span class="digit" id="min"> 
+        00</span> 
+    <span class="txt">Min</span> 
+    <span class="digit" id="sec"> 
+        00</span> 
+    <span class="txt">Sec</span> 
+    <span class="digit" id="count"> 
+        00</span> 
+</div> 
+<div id="buttons"> 
+  <button  id="start" onclick=" style.visibility = 'hidden'">--&#62;START&lt;--</button>
+  </div>
+  <button id="BUTTON1" onclick='doSomething()' onclick=
+  "wut = wut + 1; console.log(`${wut}`); ">
+  <button id="BUTTON2" onclick="show()" onclick=
+  "wut = wut + 1; console.log(`${wut}`); ">
+</button>
+<img id="confetti" src="https://th.bing.com/th/id/OIP.WyXAYK1lTxs9FqUVBPh1pAHaHa?rs=1&pid=ImgDetMain">
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+  <script>
+    let wut = 0;
+    let startBtn = document.getElementById('start');
+    let hour = 0; 
+let minute = 0; 
+let second = 0; 
+let count = 0; 
+startBtn.addEventListener('click', function () { 
+    timer = true; 
+    stopWatch(); 
+}); 
+function stopWatch() { 
+    if (timer) { 
+        count++; 
+        if (count == 100) { 
+            second++; 
+            count = 0; 
+        } 
+        if (second == 60) { 
+            minute++; 
+            second = 0; 
+        } 
+        if (minute == 60) { 
+            hour++; 
+            minute = 0; 
+            second = 0; 
+        } 
+        let hrString = hour; 
+        let minString = minute; 
+        let secString = second; 
+        let countString = count; 
+        if (hour < 10) { 
+            hrString = "0" + hrString; 
+        } 
+        if (minute < 10) { 
+            minString = "0" + minString; 
+        } 
+        if (second < 10) { 
+            secString = "0" + secString; 
+        } 
+        if (count < 10) { 
+            countString = "0" + countString; 
+        } 
+        document.getElementById('hr').innerHTML = hrString; 
+        document.getElementById('min').innerHTML = minString; 
+        document.getElementById('sec').innerHTML = secString; 
+        document.getElementById('count').innerHTML = countString; 
+        setTimeout(stopWatch, 10); 
+      }
+    }
+
+  alert('Hello, Mr. Crawford.');
+  alert('Welcome to a website that you will either despise or appreciate after I explain its purpse.')
+
+  function show() {
+            document.getElementById('confetti')
+                .style.display = "block";
+            document.getElementById('BUTTON2')
+                .style.display = "none";}
+
+      function doSomething() {
+      }
+      var d = document.getElementById('BUTTON1');
+      d.addEventListener('click', change);
+      function change() {
+     var a = Math.floor(Math.random()*1400)+1; 
+     var b = Math.floor(Math.random()*270)+1;
+       d.style.left = a + "px";
+       d.style.bottom = b + "px";}
+  </script>
+  </body>
+  </html>
